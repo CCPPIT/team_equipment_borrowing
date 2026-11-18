@@ -1,0 +1,14 @@
+{
+  "preexisting_changed": [
+    "README.md",
+    ".env.example",
+    "package.json",
+    ".gitignore",
+    "apps/api/prisma/migrations/migration_lock.toml"
+  ],
+  "missing_arabic_comments_new_system_code": [],
+  "static_js_files_scanned": 21,
+  "forbidden_bundle_matches": [],
+  "migration_sql_unchanged": true,
+  "git_history_available": false
+}

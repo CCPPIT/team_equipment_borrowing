@@ -1,0 +1,8 @@
+
+> team-equipment-borrowing@0.1.0 build
+> npm run build -w @team/api
+
+
+> @team/api@0.1.0 build
+> tsc -p tsconfig.build.json
+

@@ -1,0 +1,11 @@
+$ npm run db:seed
+EXIT 0
+
+> team-equipment-borrowing@0.1.0 db:seed
+> npm run db:seed -w @team/api
+
+
+> @team/api@0.1.0 db:seed
+> tsx prisma/seed.ts
+
+اكتملت البيانات الأولية دون إعادة ضبط المخزون أو التاريخ.

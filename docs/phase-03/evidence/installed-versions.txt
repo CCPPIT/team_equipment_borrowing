@@ -1,0 +1,14 @@
+team-equipment-borrowing@0.1.0 /home/user/Team Equipment Borrowing
+`-- @team/api@0.1.0 -> ./apps/api
+  +-- @prisma/adapter-pg@7.10.1
+  +-- @prisma/client@7.10.1
+  +-- @types/node@20.19.43
+  +-- dotenv@17.2.3
+  +-- fastify-plugin@5.1.0
+  +-- fastify@5.12.8
+  +-- pg@8.23.1
+  +-- prisma@7.10.1
+  +-- tsx@4.20.6
+  +-- typescript@5.9.3
+  `-- vitest@4.1.12
+

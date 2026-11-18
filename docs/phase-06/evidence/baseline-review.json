@@ -1,0 +1,17 @@
+{
+  "changed_preexisting_files": [
+    "package-lock.json",
+    "README.md",
+    "package.json",
+    "apps/api/package.json",
+    "apps/web/tests/components.test.tsx",
+    "apps/web/src/features/borrowing/components.tsx"
+  ],
+  "historical_docs_unchanged": true,
+  "api_business_source_unchanged": true,
+  "schema_migrations_unchanged": true,
+  "local_env_unchanged": true,
+  "removed_confirmed_generated_files": [
+    "tests/system/test-results/system/results.json"
+  ]
+}

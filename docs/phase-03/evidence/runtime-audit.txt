@@ -1,0 +1,24 @@
+$ npm audit --omit=dev --json
+EXIT 0
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {},
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "dependencies": {
+      "prod": 196,
+      "dev": 131,
+      "optional": 88,
+      "peer": 30,
+      "peerOptional": 0,
+      "total": 330
+    }
+  }
+}

@@ -1,0 +1,14 @@
+$ npm run prisma:validate
+EXIT 0
+
+> team-equipment-borrowing@0.1.0 prisma:validate
+> npm run prisma:validate -w @team/api
+
+
+> @team/api@0.1.0 prisma:validate
+> prisma validate
+
+The schema at prisma/schema.prisma is valid 🚀
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.

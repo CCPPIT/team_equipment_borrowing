@@ -1,0 +1,18 @@
+# استبعاد التبعيات والملفات المولدة والأسرار المحلية
+node_modules/
+.env
+.env.*
+!.env.example
+build/
+coverage/
+*.log
+.local/
+
+# استبعاد نواتج Next والاختبارات المرئية المولدة
+.next/
+playwright-report/
+test-results/
+*.tsbuildinfo
+
+# السماح بأمثلة الإعداد الآمنة فقط دون الأسرار المحلية
+!.env.*.example

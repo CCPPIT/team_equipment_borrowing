@@ -1,0 +1,32 @@
+[
+  {
+    "command": "node --version",
+    "exit": 0,
+    "stdout": "v22.22.2",
+    "stderr": ""
+  },
+  {
+    "command": "npm --version",
+    "exit": 0,
+    "stdout": "10.8.2",
+    "stderr": ""
+  },
+  {
+    "command": "psql --version",
+    "exit": 0,
+    "stdout": "psql (PostgreSQL) 17.12 (Debian 17.12-0+deb13u1)",
+    "stderr": ""
+  },
+  {
+    "command": "npm view picomatch version",
+    "exit": 0,
+    "stdout": "4.0.7",
+    "stderr": ""
+  },
+  {
+    "command": "npm view eslint-plugin-react peerDependencies --json",
+    "exit": 0,
+    "stdout": "{\n  \"eslint\": \"^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7\"\n}",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,6 @@
+$ npm run db:setup
+EXIT 0
+
+> team-equipment-borrowing@0.1.0 db:setup
+> bash scripts/db-local.sh setup
+

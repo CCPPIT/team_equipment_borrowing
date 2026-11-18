@@ -1,0 +1,15 @@
+{
+  "changed_preexisting_files": [
+    "README.md",
+    ".env.example",
+    "package.json",
+    ".gitignore",
+    "apps/api/prisma/migrations/migration_lock.toml"
+  ],
+  "allowed_metadata_fix_approved": true,
+  "product_source_unchanged_except_migration_lock_metadata": true,
+  "schema_and_migration_sql_unchanged": true,
+  "historical_docs_00_to_04_unchanged": true,
+  "package_lock_unchanged": true,
+  "local_env_unchanged": true
+}

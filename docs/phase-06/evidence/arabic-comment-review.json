@@ -1,0 +1,5 @@
+{
+  "method": "heuristic inline or preceding Arabic comment; generated/JSON excluded; TOML provider has approved preceding comment",
+  "files_scanned": 54,
+  "missing_candidates": []
+}

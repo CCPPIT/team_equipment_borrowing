@@ -1,0 +1,43 @@
+{
+  "path": "/home/user/.local/team-equipment-submission-verify",
+  "isolated_database": "team_equipment_submission_test",
+  "steps": [
+    {
+      "command": "npm ci",
+      "exit": 0,
+      "log": "clean-stage-1.log"
+    },
+    {
+      "command": "npm run prisma:generate",
+      "exit": 0,
+      "log": "clean-stage-2.log"
+    },
+    {
+      "command": "npm run db:migrate",
+      "exit": 0,
+      "log": "clean-stage-3.log"
+    },
+    {
+      "command": "npm run db:seed",
+      "exit": 0,
+      "log": "clean-stage-4.log"
+    },
+    {
+      "command": "npm run typecheck:all",
+      "exit": 0,
+      "log": "clean-stage-5.log"
+    },
+    {
+      "command": "npm run lint:all",
+      "exit": 0,
+      "log": "clean-stage-6.log"
+    },
+    {
+      "command": "npm run build:all",
+      "exit": 0,
+      "log": "clean-stage-7.log"
+    }
+  ],
+  "source_clean_copy": true,
+  "uses_local_env_examples": true
+}

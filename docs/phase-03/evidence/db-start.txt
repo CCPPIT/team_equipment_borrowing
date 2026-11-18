@@ -1,0 +1,6 @@
+$ npm run db:start
+EXIT 0
+
+> team-equipment-borrowing@0.1.0 db:start
+> bash scripts/db-local.sh start
+

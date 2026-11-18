@@ -1,0 +1,2 @@
+import { defineConfig } from '@playwright/test'; // اختبار سلوك الواجهة أو تجهيز بياناته دون استبدال تحقق التكامل الحقيقي
+export default defineConfig({ testDir: './tests/browser', workers: 1, retries: 0, reporter: [['list'], ['json', { outputFile: 'test-results/browser.json' }]], use: { baseURL: process.env.WEB_TEST_URL ?? 'http://127.0.0.1:3000', headless: true }, projects: [{ name: 'chromium', use: { browserName: 'chromium' } }] }); // اختبار سلوك الواجهة أو تجهيز بياناته دون استبدال تحقق التكامل الحقيقي

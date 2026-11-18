@@ -1,0 +1,19 @@
+$ npm run db:migrate
+EXIT 0
+
+> team-equipment-borrowing@0.1.0 db:migrate
+> npm run db:migrate -w @team/api
+
+
+> @team/api@0.1.0 db:migrate
+> prisma migrate deploy
+
+Datasource "db": PostgreSQL database "team_equipment", schema "public" at "127.0.0.1:5432"
+
+1 migration found in prisma/migrations
+
+
+No pending migrations to apply.
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.

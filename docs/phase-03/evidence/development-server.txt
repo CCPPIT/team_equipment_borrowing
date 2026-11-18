@@ -1,0 +1,3 @@
+EXECUTED: API_PORT=3003 npm run api:dev
+GET /api/health: 200
+{"success":true,"data":{"status":"ok"}}

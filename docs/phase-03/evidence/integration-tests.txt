@@ -1,0 +1,20 @@
+$ npm run test:integration
+EXIT 0
+
+> team-equipment-borrowing@0.1.0 test:integration
+> npm run test:integration -w @team/api
+
+
+> @team/api@0.1.0 test:integration
+> vitest run tests/integration
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90m/home/user/Team Equipment Borrowing/apps/api[39m
+
+ [32m✓[39m tests/integration/backend.test.ts [2m([22m[2m33 tests[22m[2m)[22m[33m 1040[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m33 passed[39m[22m[90m (33)[39m
+[2m   Start at [22m 06:16:04
+[2m   Duration [22m 1.45s[2m (transform 131ms, setup 0ms, import 278ms, tests 1.04s, environment 0ms)[22m
+

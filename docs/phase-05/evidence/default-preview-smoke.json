@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "employees": 3,
+  "equipment": 3,
+  "readOnly": true,
+  "frontendPort": 3000,
+  "backendPort": 3001
+}

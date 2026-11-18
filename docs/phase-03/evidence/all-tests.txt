@@ -1,0 +1,5 @@
+
+> @team/api@0.1.0 test
+> vitest run --reporter=json --outputFile=../../docs/phase-03/evidence/test-results.json
+
+JSON report written to /home/user/Team Equipment Borrowing/docs/phase-03/evidence/test-results.json

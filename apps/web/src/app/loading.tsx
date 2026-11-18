@@ -1,0 +1,1 @@
+export default function Loading() { return <main className="main-container" id="main-content"><p className="loading-panel" role="status">جاري تجهيز مساحة المعدات…</p></main>; } // إتاحة تعريف واضح الأنواع لبقية الواجهة أو الاختبارات

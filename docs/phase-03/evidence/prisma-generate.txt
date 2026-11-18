@@ -1,0 +1,19 @@
+$ npm run prisma:generate
+EXIT 0
+
+> team-equipment-borrowing@0.1.0 prisma:generate
+> npm run prisma:generate -w @team/api
+
+
+> @team/api@0.1.0 prisma:generate
+> prisma generate
+
+
+✔ Generated Prisma Client (v7.10.1) to ./../../node_modules/@prisma/client in 100ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.

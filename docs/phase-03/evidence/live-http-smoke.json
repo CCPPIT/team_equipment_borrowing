@@ -1,0 +1,68 @@
+{
+  "/api/health": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "data": {
+        "status": "ok"
+      }
+    }
+  },
+  "/api/employees": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "data": {
+        "employees": [
+          {
+            "id": "11111111-1111-4111-8111-111111111111",
+            "name": "أحمد"
+          },
+          {
+            "id": "11111111-1111-4111-8111-333333333333",
+            "name": "سالم"
+          },
+          {
+            "id": "11111111-1111-4111-8111-222222222222",
+            "name": "ليلى"
+          }
+        ]
+      }
+    }
+  },
+  "/api/equipment?employeeId=11111111-1111-4111-8111-111111111111": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "data": {
+        "employeeId": "11111111-1111-4111-8111-111111111111",
+        "equipment": [
+          {
+            "id": "22222222-2222-4222-8222-222222222222",
+            "name": "جهاز عرض",
+            "description": null,
+            "totalQuantity": 1,
+            "availableQuantity": 1,
+            "activeLoan": null
+          },
+          {
+            "id": "22222222-2222-4222-8222-111111111111",
+            "name": "شاشة",
+            "description": null,
+            "totalQuantity": 2,
+            "availableQuantity": 2,
+            "activeLoan": null
+          },
+          {
+            "id": "22222222-2222-4222-8222-333333333333",
+            "name": "محول",
+            "description": null,
+            "totalQuantity": 0,
+            "availableQuantity": 0,
+            "activeLoan": null
+          }
+        ]
+      }
+    }
+  }
+}

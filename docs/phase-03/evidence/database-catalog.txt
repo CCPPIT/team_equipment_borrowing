@@ -1,0 +1,23 @@
+        conname        | contype 
+-----------------------+---------
+ Employee_pkey         | p
+ Equipment_pkey        | p
+ Loan_employeeId_fkey  | f
+ Loan_equipmentId_fkey | f
+ Loan_pkey             | p
+ eq_available_bounds   | c
+ eq_total_nonnegative  | c
+(7 rows)
+
+                 indexname                 |                                                                       indexdef                                                                        
+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------
+ Loan_pkey                                 | CREATE UNIQUE INDEX "Loan_pkey" ON public."Loan" USING btree (id)
+ unique_active_loan_per_employee_equipment | CREATE UNIQUE INDEX unique_active_loan_per_employee_equipment ON public."Loan" USING btree ("employeeId", "equipmentId") WHERE ("returnedAt" IS NULL)
+ idx_loan_equipment                        | CREATE INDEX idx_loan_equipment ON public."Loan" USING btree ("equipmentId")
+(3 rows)
+
+ employees | equipment | loans 
+-----------+-----------+-------
+         3 |         3 |     0
+(1 row)
+

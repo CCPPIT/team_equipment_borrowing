@@ -1,0 +1,128 @@
+[
+  {
+    "check": "node-version",
+    "command": "node --version",
+    "executed": true,
+    "exitCode": 0,
+    "log": "node-version.txt"
+  },
+  {
+    "check": "npm-version",
+    "command": "npm --version",
+    "executed": true,
+    "exitCode": 0,
+    "log": "npm-version.txt"
+  },
+  {
+    "check": "postgres-version",
+    "command": "psql --version",
+    "executed": true,
+    "exitCode": 0,
+    "log": "postgres-version.txt"
+  },
+  {
+    "check": "db-start",
+    "command": "npm run db:start",
+    "executed": true,
+    "exitCode": 0,
+    "log": "db-start.txt"
+  },
+  {
+    "check": "db-setup",
+    "command": "npm run db:setup",
+    "executed": true,
+    "exitCode": 0,
+    "log": "db-setup.txt"
+  },
+  {
+    "check": "prisma-generate",
+    "command": "npm run prisma:generate",
+    "executed": true,
+    "exitCode": 0,
+    "log": "prisma-generate.txt"
+  },
+  {
+    "check": "prisma-validate",
+    "command": "npm run prisma:validate",
+    "executed": true,
+    "exitCode": 0,
+    "log": "prisma-validate.txt"
+  },
+  {
+    "check": "migration-status",
+    "command": "npm run db:migrate",
+    "executed": true,
+    "exitCode": 0,
+    "log": "migration-status.txt"
+  },
+  {
+    "check": "test-migrate",
+    "command": "npm run db:test:migrate",
+    "executed": true,
+    "exitCode": 0,
+    "log": "test-migrate.txt"
+  },
+  {
+    "check": "seed-first",
+    "command": "npm run db:seed",
+    "executed": true,
+    "exitCode": 0,
+    "log": "seed-first.txt"
+  },
+  {
+    "check": "seed-second",
+    "command": "npm run db:seed",
+    "executed": true,
+    "exitCode": 0,
+    "log": "seed-second.txt"
+  },
+  {
+    "check": "typecheck",
+    "command": "npm run typecheck",
+    "executed": true,
+    "exitCode": 0,
+    "log": "typecheck.txt"
+  },
+  {
+    "check": "build",
+    "command": "npm run build",
+    "executed": true,
+    "exitCode": 0,
+    "log": "build.txt"
+  },
+  {
+    "check": "unit-tests",
+    "command": "npm run test:unit",
+    "executed": true,
+    "exitCode": 0,
+    "log": "unit-tests.txt"
+  },
+  {
+    "check": "integration-tests",
+    "command": "npm run test:integration",
+    "executed": true,
+    "exitCode": 0,
+    "log": "integration-tests.txt"
+  },
+  {
+    "check": "all-tests",
+    "command": "npm run test -w @team/api -- --reporter=json --outputFile=../../docs/phase-03/evidence/test-results.json",
+    "executed": true,
+    "exitCode": 0,
+    "log": "all-tests.txt"
+  },
+  {
+    "check": "runtime-audit",
+    "command": "npm audit --omit=dev --json",
+    "executed": true,
+    "exitCode": 0,
+    "log": "runtime-audit.txt"
+  },
+  {
+    "check": "full-audit",
+    "command": "npm audit --json",
+    "executed": true,
+    "exitCode": 1,
+    "log": "full-audit.txt"
+  }
+]

@@ -1,0 +1,3 @@
+PASS: Arabic explanation on every nonempty commentable line in 23 authored TS/Prisma/SQL/TOML/shell files. Shebang and JSON/lock/generated files excluded.
+PASS: No explicit any, @ts-ignore, $queryRawUnsafe or $executeRawUnsafe in authored TypeScript.
+PASS: No apps/web; all 38 pre-existing documents unchanged before the authorized README update.

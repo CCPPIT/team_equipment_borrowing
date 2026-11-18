@@ -1,0 +1,3 @@
+$ psql --version
+EXIT 0
+psql (PostgreSQL) 17.12 (Debian 17.12-0+deb13u1)

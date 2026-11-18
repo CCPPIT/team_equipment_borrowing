@@ -1,0 +1,5 @@
+EXECUTED: API_PORT=3002 node apps/api/build/server.js
+HTTP GET /api/health: 200
+{"success":true,"data":{"status":"ok"}}
+SIGTERM sent; process exited naturally with code 0
+{"level":30,"time":1794982612615,"pid":8062,"hostname":"e2b.local","msg":"Server listening at http://127.0.0.1:3002"}

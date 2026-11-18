@@ -1,0 +1,158 @@
+[
+  {
+    "name": "three-cycles-database",
+    "data": {
+      "equipment": [
+        {
+          "id": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+          "name": "متعدد",
+          "description": null,
+          "totalQuantity": 2,
+          "availableQuantity": 2,
+          "createdAt": "2026-11-18T07:19:41.661+00:00"
+        },
+        {
+          "id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+          "name": "أخير",
+          "description": null,
+          "totalQuantity": 1,
+          "availableQuantity": 1,
+          "createdAt": "2026-11-18T07:19:41.661+00:00"
+        },
+        {
+          "id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "name": "نافد",
+          "description": null,
+          "totalQuantity": 0,
+          "availableQuantity": 0,
+          "createdAt": "2026-11-18T07:19:41.661+00:00"
+        }
+      ],
+      "loans": [
+        {
+          "id": "3a690944-9ad7-4257-b017-ee3336c15c29",
+          "employeeId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "equipmentId": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+          "borrowedAt": "2026-11-18T07:19:42.632+00:00",
+          "returnedAt": "2026-11-18T07:19:42.798+00:00"
+        },
+        {
+          "id": "7c1d7429-3a66-4f1f-95b7-f2328853c97e",
+          "employeeId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "equipmentId": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+          "borrowedAt": "2026-11-18T07:19:42.943+00:00",
+          "returnedAt": "2026-11-18T07:19:43.059+00:00"
+        },
+        {
+          "id": "86ad3169-9ad7-4d8a-ba1d-4bd6b2a77406",
+          "employeeId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "equipmentId": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+          "borrowedAt": "2026-11-18T07:19:42.316+00:00",
+          "returnedAt": "2026-11-18T07:19:42.479+00:00"
+        }
+      ]
+    }
+  },
+  {
+    "name": "http-concurrency-proof",
+    "data": {
+      "round": 1,
+      "observedWaiters": 2,
+      "statuses": [
+        201,
+        409
+      ],
+      "state": [
+        {
+          "id": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+          "total": 2,
+          "available": 2,
+          "active": 0,
+          "employees": 0
+        },
+        {
+          "id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+          "total": 1,
+          "available": 0,
+          "active": 1,
+          "employees": 1
+        },
+        {
+          "id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "total": 0,
+          "available": 0,
+          "active": 0,
+          "employees": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "http-concurrency-proof",
+    "data": {
+      "round": 2,
+      "observedWaiters": 2,
+      "statuses": [
+        201,
+        409
+      ],
+      "state": [
+        {
+          "id": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+          "total": 2,
+          "available": 2,
+          "active": 0,
+          "employees": 0
+        },
+        {
+          "id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+          "total": 1,
+          "available": 0,
+          "active": 1,
+          "employees": 1
+        },
+        {
+          "id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "total": 0,
+          "available": 0,
+          "active": 0,
+          "employees": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "http-concurrency-proof",
+    "data": {
+      "round": 3,
+      "observedWaiters": 2,
+      "statuses": [
+        201,
+        409
+      ],
+      "state": [
+        {
+          "id": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+          "total": 2,
+          "available": 2,
+          "active": 0,
+          "employees": 0
+        },
+        {
+          "id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+          "total": 1,
+          "available": 0,
+          "active": 1,
+          "employees": 1
+        },
+        {
+          "id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "total": 0,
+          "available": 0,
+          "active": 0,
+          "employees": 0
+        }
+      ]
+    }
+  }
+]
