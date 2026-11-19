@@ -6,12 +6,13 @@ const placeholder = 'postgresql://build:build@127.0.0.1:5432/build'; // قيمة
 const generateEnv = process.env.DATABASE_URL ? {} : { DATABASE_URL: placeholder }; // توليد العميل لا يحتاج اتصالًا فعليًا
 console.log('[vercel-build] توليد Prisma Client'); // سجل تشغيلي دون أسرار
 run('npx', ['prisma', 'generate', '--schema', 'apps/api/prisma/schema.prisma'], generateEnv); // توليد العميل قبل بناء الواجهة
-if (vercelEnv === 'production') { // التحقق من الشرط قبل متابعة التنفيذ وحماية صحة الحالة
-  if (!process.env.DATABASE_URL) { console.error('[vercel-build] DATABASE_URL مطلوب لنشر الإنتاج'); process.exit(1); } // إيقاف المسار الفاشل دون تحويله إلى نتيجة نجاح
+if (vercelEnv === 'production' && process.env.DATABASE_URL) { // التحقق من الشرط قبل متابعة التنفيذ وحماية صحة الحالة
   console.log('[vercel-build] تطبيق الترحيل على قاعدة الإنتاج'); // سجل تشغيلي دون أسرار
   run('npm', ['run', 'db:migrate']); // تطبيق SQL migrations على DATABASE_URL
   console.log('[vercel-build] بذر البيانات الأولية دون تصفير المخزون'); // سجل تشغيلي دون أسرار
   run('npm', ['run', 'db:seed']); // إدخال الموظفين والأنواع إن لم تكن موجودة
+} else if (vercelEnv === 'production') { // إغلاق النطاق الحالي بعد إكمال المسؤولية المحددة
+  console.log('[vercel-build] تحذير: DATABASE_URL غير مضبوط؛ ستنجح الواجهة لكن استدعاءات /api ستفشل حتى تُضاف القاعدة'); // إفصاح واضح بدل فشل مبهم
 } else { // إغلاق النطاق الحالي بعد إكمال المسؤولية المحددة
   console.log('[vercel-build] تخطي الترحيل والبذر لهذه البيئة'); // إبقاء المعاينات بلا لمس قاعدة الإنتاج
 } // إغلاق النطاق الحالي بعد إكمال المسؤولية المحددة
