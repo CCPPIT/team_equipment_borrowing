@@ -38,7 +38,8 @@
     "test:all": "npm run test -w @team/api && npm run web:test",
     "system:migrate": "node tests/system/migrate.mjs",
     "api:lint": "npm run lint -w @team/api",
-    "lint:all": "npm run api:lint && npm run web:lint && npm run system:lint"
+    "lint:all": "npm run api:lint && npm run web:lint && npm run system:lint",
+    "vercel:build": "node scripts/vercel-build.mjs && npm run web:build"
   },
   "packageManager": "npm@10.8.2"
 }
