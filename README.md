@@ -26,6 +26,7 @@
 Team Equipment Borrowing/
 ├── apps/api/          Fastify + Prisma + migrations + seed + backend tests
 ├── apps/web/          Next App Router + API client + components + frontend/browser tests
+├── packages/contract/ عقد @team/contract: DTO ورموز أخطاء ومغلفات ومعرّفات بذر مشتركة دون منطق أعمال
 ├── tests/system/      HTTP/browser/PostgreSQL integration harness (test only)
 ├── scripts/           local PostgreSQL helper
 ├── docs/phase-00/ … docs/phase-06/
@@ -34,7 +35,7 @@ Team Equipment Borrowing/
 ├── .env.example
 └── .gitignore
 ```
-المتصفح → `/api` على Next → HTTP rewrite خادمي → Fastify → Prisma → PostgreSQL. لا وصول DB من المتصفح ولا Prisma types في مصدر عميل الويب. لا shared package أو طبقات عامة غير لازمة؛ DTO صغيرة يطابقها اختبار العقد.
+المتصفح → `/api` على Next → (محليًا: HTTP rewrite خادمي إلى Fastify | على Vercel: استدعاء داخلي لـFastify عبر `app.inject()`) → Prisma → PostgreSQL. لا وصول DB من المتصفح ولا Prisma types في مصدر عميل الويب. حزمة `@team/contract` المشتركة تقتصر على DTO ورموز الأخطاء والمغلفات ومعرّفات البذر؛ DTO التواريخ نصوص ISO في السلك ويحرسها اختبار العقد.
 
 ## المتطلبات السابقة
 - Node **^22.22.2 أو ^24.15.0 أو >=26.0.0**؛ النسخة المنفذة في QA هي22.22.2، وnpm10.8.2. فروع Node الأخرى المسموح بها بالـengines لم تُختبر كلها.

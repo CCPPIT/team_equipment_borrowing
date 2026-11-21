@@ -1,12 +1,7 @@
-export type ErrorCode = 'VALIDATION_ERROR' | 'EMPLOYEE_NOT_FOUND' | 'EQUIPMENT_NOT_FOUND' | 'LOAN_NOT_FOUND' | 'ALREADY_BORROWED' | 'OUT_OF_STOCK' | 'ALREADY_RETURNED' | 'TRANSACTION_CONFLICT' | 'INTERNAL_SERVER_ERROR' | 'ROUTE_NOT_FOUND'; // إتاحة تعريف محدد الأنواع لبقية التطبيق أو الاختبارات
-const messages: Record<ErrorCode, string> = { // تعريف قيمة محلية واضحة النوع لهذا المسار
-  VALIDATION_ERROR: 'مدخلات الطلب غير صالحة.', EMPLOYEE_NOT_FOUND: 'الموظف غير موجود.', EQUIPMENT_NOT_FOUND: 'نوع المعدات غير موجود.', // متابعة التعريف أو الاستدعاء ضمن النطاق الحالي
-  LOAN_NOT_FOUND: 'الاستعارة غير موجودة للموظف المحدد.', ALREADY_BORROWED: 'توجد استعارة نشطة لهذا النوع.', OUT_OF_STOCK: 'لا توجد وحدات متاحة من هذا النوع.', // متابعة التعريف أو الاستدعاء ضمن النطاق الحالي
-  ALREADY_RETURNED: 'أُرجعت هذه الاستعارة مسبقًا.', TRANSACTION_CONFLICT: 'تعارضت المعاملة؛ حدّث البيانات قبل المحاولة مجددًا.', // متابعة التعريف أو الاستدعاء ضمن النطاق الحالي
-  INTERNAL_SERVER_ERROR: 'تعذر إكمال الطلب بسبب خطأ داخلي.', ROUTE_NOT_FOUND: 'المسار غير موجود.', // متابعة التعريف أو الاستدعاء ضمن النطاق الحالي
-}; // إغلاق النطاق أو البنية الحالية دون تغيير إضافي للحالة
+import { ERROR_MESSAGES, type ErrorCode } from '@team/contract'; // استيراد رموز الأخطاء ونصوصها العربية من العقد المشترك
+export type { ErrorCode } from '@team/contract'; // إعادة تصدير الرمز للحفاظ على توافق مستوردي المكتبة الحاليين
 export class DomainError extends Error { // إتاحة تعريف محدد الأنواع لبقية التطبيق أو الاختبارات
-  constructor(public readonly code: ErrorCode, public readonly status: number) { super(messages[code]); this.name = 'DomainError'; } // متابعة التعريف أو الاستدعاء ضمن النطاق الحالي
+  constructor(public readonly code: ErrorCode, public readonly status: number) { super(ERROR_MESSAGES[code]); this.name = 'DomainError'; } // متابعة التعريف أو الاستدعاء ضمن النطاق الحالي
 } // إغلاق النطاق أو البنية الحالية دون تغيير إضافي للحالة
 function record(value: unknown): value is Record<string, unknown> { return typeof value === 'object' && value !== null; } // متابعة التعريف أو الاستدعاء ضمن النطاق الحالي
 export function classifyError(error: unknown, depth = 0): DomainError { // إتاحة تعريف محدد الأنواع لبقية التطبيق أو الاختبارات

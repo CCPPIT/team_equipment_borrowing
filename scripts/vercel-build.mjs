@@ -2,6 +2,8 @@ import { execFileSync } from 'node:child_process'; // تشغيل خطوات ال
 const run = (command, args, env = {}) => execFileSync(command, args, { stdio: 'inherit', cwd: process.cwd(), env: { ...process.env, ...env } }); // تعريف أداة إطلاق الخطوات بوراثة البيئة
 const vercelEnv = process.env.VERCEL_ENV ?? 'development'; // قراءة بيئة Vercel؛ غيابها يعني بناءً محليًا
 console.log(`[vercel-build] VERCEL_ENV=${vercelEnv}`); // سجل تشغيلي دون أسرار
+console.log('[vercel-build] بناء حزمة العقد المشتركة @team/contract'); // خطوة تأسيسية يحتاجها الـapi والواجهة معًا
+run('npm', ['run', 'contract:build']); // بناء نظيف لحزمة العقد قبل أي توليد أو بناء آخر
 const placeholder = 'postgresql://build:build@127.0.0.1:5432/build'; // قيمة صورية لتمرير تحققات الصيغة فقط دون اتصال
 const generateEnv = process.env.DATABASE_URL ? {} : { DATABASE_URL: placeholder }; // توليد العميل لا يحتاج اتصالًا فعليًا
 console.log('[vercel-build] توليد Prisma Client'); // سجل تشغيلي دون أسرار

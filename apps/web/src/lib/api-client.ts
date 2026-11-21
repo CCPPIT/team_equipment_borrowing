@@ -1,15 +1,16 @@
-import type { Employee, Equipment, EquipmentData, Loan, ActiveLoan } from '../types/api'; // استيراد الاعتماد المطلوب مع فصل العرض عن الاتصال بالخادم
-const messages: Record<string, string> = { // تنسيق حالة الواجهة أو تنفيذ الخطوة المحددة دون تغيير بيانات الخادم محليًا
+import type { Employee, Equipment, EquipmentData, Loan, ActiveLoan, ErrorCode } from '@team/contract'; // استيراد الاعتماد المطلوب مع فصل العرض عن الاتصال بالخادم
+type ClientErrorCode = ErrorCode | 'NETWORK_ERROR' | 'TIMEOUT_ERROR' | 'INVALID_RESPONSE' | 'ABORTED'; // أكواد إضافية يولّدها العميل فوق رموز العقد المشتركة
+const messages: Record<ClientErrorCode, string> = { // سجل شامل لكل رمز؛ التوسعة دون رسالة تُفشل الترجمة مباشرة
   OUT_OF_STOCK: 'لم تعد هناك وحدات متاحة. تم طلب تحديث المخزون.', ALREADY_BORROWED: 'لديك استعارة نشطة من هذا النوع. راجع الحالة المحدّثة.', // تنسيق حالة الواجهة أو تنفيذ الخطوة المحددة دون تغيير بيانات الخادم محليًا
   ALREADY_RETURNED: 'أُرجعت هذه الاستعارة من قبل. راجع الحالة المحدّثة.', LOAN_NOT_FOUND: 'لم تعد هذه الاستعارة متاحة للموظف المحدد.', // تنسيق حالة الواجهة أو تنفيذ الخطوة المحددة دون تغيير بيانات الخادم محليًا
   EMPLOYEE_NOT_FOUND: 'الموظف المحدد غير موجود. حدّث قائمة الموظفين واختر من جديد.', EQUIPMENT_NOT_FOUND: 'نوع المعدات لم يعد موجودًا. حدّث القائمة.', // تنسيق حالة الواجهة أو تنفيذ الخطوة المحددة دون تغيير بيانات الخادم محليًا
   VALIDATION_ERROR: 'تعذر قبول الطلب. تحقق من الموظف والمعدات المحددة.', INTERNAL_SERVER_ERROR: 'تعذر تأكيد العملية بسبب خطأ في الخادم.', // تنسيق حالة الواجهة أو تنفيذ الخطوة المحددة دون تغيير بيانات الخادم محليًا
   TRANSACTION_CONFLICT: 'تعارض الطلب مع عملية أخرى. راجع الحالة قبل المحاولة مجددًا.', NETWORK_ERROR: 'تعذر الاتصال بالخادم. تحقق من الاتصال وأعد تحميل الحالة.', // تنسيق حالة الواجهة أو تنفيذ الخطوة المحددة دون تغيير بيانات الخادم محليًا
   TIMEOUT_ERROR: 'استغرق الاتصال وقتًا أطول من المتوقع. حدّث الحالة قبل المحاولة مجددًا.', INVALID_RESPONSE: 'وصلت استجابة غير متوقعة. حدّث الحالة للتحقق من النتيجة.', // تنسيق حالة الواجهة أو تنفيذ الخطوة المحددة دون تغيير بيانات الخادم محليًا
-  ABORTED: 'أُلغي تحميل البيانات.', // تنسيق حالة الواجهة أو تنفيذ الخطوة المحددة دون تغيير بيانات الخادم محليًا
+  ABORTED: 'أُلغي تحميل البيانات.', ROUTE_NOT_FOUND: 'المسار غير موجود على خادم المعدات.', UNSUPPORTED_MEDIA_TYPE: 'نوع المحتوى غير مدعوم.', // إكمال رموز العقد المشتركة حتى يبقى السجل مطابقًا تمامًا
 }; // إغلاق النطاق الحالي بعد إكمال المسؤولية المحددة
 export class ApiError extends Error { // إتاحة تعريف واضح الأنواع لبقية الواجهة أو الاختبارات
-  constructor(public readonly code: string, public readonly status = 0) { super(messages[code] ?? 'تعذر إكمال الطلب. يرجى تحديث البيانات والمحاولة مجددًا.'); this.name = 'ApiError'; } // تنسيق حالة الواجهة أو تنفيذ الخطوة المحددة دون تغيير بيانات الخادم محليًا
+  constructor(public readonly code: string, public readonly status = 0) { super((messages as Record<string, string>)[code] ?? 'تعذر إكمال الطلب. يرجى تحديث البيانات والمحاولة مجددًا.'); this.name = 'ApiError'; } // قراءة آمنة لرمز قادم من السلك غير الموثوق مع بقاء اكتمال السجل مفروضًا بالترجمة
 } // إغلاق النطاق الحالي بعد إكمال المسؤولية المحددة
 function record(value: unknown): value is Record<string, unknown> { return typeof value === 'object' && value !== null && !Array.isArray(value); } // تنسيق حالة الواجهة أو تنفيذ الخطوة المحددة دون تغيير بيانات الخادم محليًا
 export function uuid(value: unknown): value is string { return typeof value === 'string' && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value); } // إتاحة تعريف واضح الأنواع لبقية الواجهة أو الاختبارات
