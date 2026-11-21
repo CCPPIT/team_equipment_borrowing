@@ -1,7 +1,7 @@
 'use client'; // تنسيق حالة الواجهة أو تنفيذ الخطوة المحددة دون تغيير بيانات الخادم محليًا
 import { useCallback, useEffect, useRef, useState } from 'react'; // استيراد الاعتماد المطلوب مع فصل العرض عن الاتصال بالخادم
 import { api, asApiError, uncertain } from '../../lib/api-client'; // استيراد الاعتماد المطلوب مع فصل العرض عن الاتصال بالخادم
-import type { Employee, Equipment } from '../../types/api'; // استيراد الاعتماد المطلوب مع فصل العرض عن الاتصال بالخادم
+import type { Employee, Equipment } from '@team/contract'; // استيراد الاعتماد المطلوب مع فصل العرض عن الاتصال بالخادم
 export type LoadState = 'idle' | 'loading' | 'ready' | 'error'; // إتاحة تعريف واضح الأنواع لبقية الواجهة أو الاختبارات
 export interface Feedback { kind: 'success' | 'error' | 'warning'; title: string; detail: string; code?: string; } // إتاحة تعريف واضح الأنواع لبقية الواجهة أو الاختبارات
 export interface PendingAction { equipmentId: string; kind: 'borrow' | 'return'; } // إتاحة تعريف واضح الأنواع لبقية الواجهة أو الاختبارات

@@ -1,7 +1,8 @@
-import type { Employee, Equipment, Loan } from '../src/types/api'; // اختبار سلوك الواجهة أو تجهيز بياناته دون استبدال تحقق التكامل الحقيقي
-export const A = '11111111-1111-4111-8111-111111111111'; // اختبار سلوك الواجهة أو تجهيز بياناته دون استبدال تحقق التكامل الحقيقي
-export const B = '11111111-1111-4111-8111-222222222222'; // اختبار سلوك الواجهة أو تجهيز بياناته دون استبدال تحقق التكامل الحقيقي
-export const X = '22222222-2222-4222-8222-111111111111'; // اختبار سلوك الواجهة أو تجهيز بياناته دون استبدال تحقق التكامل الحقيقي
+import type { Employee, Equipment, Loan } from '@team/contract'; // استيراد أنواع العقد المشتركة بدل نسخة محلية
+import { SEED_EMPLOYEE_IDS, SEED_EQUIPMENT_IDS } from '@team/contract'; // استيراد معرّفات البذر المشتركة بدل تكرارها يدويًا
+export const A = SEED_EMPLOYEE_IDS[0]; // أحمد بنص المعرّف نفسه المعتمد في البذر
+export const B = SEED_EMPLOYEE_IDS[1]; // ليلى بنفس نص المعرّف المعتمد في البذر
+export const X = SEED_EQUIPMENT_IDS[0]; // شاشة بنفس نص المعرّف المعتمد في البذر
 export const L = '33333333-3333-4333-8333-333333333333'; // اختبار سلوك الواجهة أو تجهيز بياناته دون استبدال تحقق التكامل الحقيقي
 export const employees: Employee[] = [{ id: A, name: 'أحمد' }, { id: B, name: 'ليلى' }]; // اختبار سلوك الواجهة أو تجهيز بياناته دون استبدال تحقق التكامل الحقيقي
 export const equipment: Equipment = { id: X, name: 'شاشة', description: 'شاشة للعمل المشترك', totalQuantity: 2, availableQuantity: 2, activeLoan: null }; // اختبار سلوك الواجهة أو تجهيز بياناته دون استبدال تحقق التكامل الحقيقي

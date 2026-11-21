@@ -1,6 +1,6 @@
 'use client'; // المكونات التفاعلية تستخدم مراجع DOM لإدارة التركيز داخل شجرة العميل فقط
 import { useEffect, useRef } from 'react'; // تتبع زر الإجراء واستعادة التركيز بعد القراءة المؤكدة دون إضافة حالة عرض
-import type { Employee, Equipment } from '../../types/api'; // استيراد الاعتماد المطلوب مع فصل العرض عن الاتصال بالخادم
+import type { Employee, Equipment } from '@team/contract'; // استيراد الاعتماد المطلوب مع فصل العرض عن الاتصال بالخادم
 import type { Feedback, PendingAction, LoadState } from './use-borrowing'; // استيراد الاعتماد المطلوب مع فصل العرض عن الاتصال بالخادم
 import { Icon } from '../../components/icon'; // استيراد الاعتماد المطلوب مع فصل العرض عن الاتصال بالخادم
 export function FeedbackPanel({ value }: { value: Feedback }) { // إتاحة تعريف واضح الأنواع لبقية الواجهة أو الاختبارات

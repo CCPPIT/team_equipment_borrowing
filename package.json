@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.1.0",
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
   "engines": {
     "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
@@ -11,35 +12,36 @@
   "scripts": {
     "api:dev": "npm run dev -w @team/api",
     "api:start": "npm run start -w @team/api",
-    "build": "npm run build -w @team/api",
-    "typecheck": "npm run typecheck -w @team/api",
+    "build": "npm run contract:build && npm run build -w @team/api",
+    "typecheck": "npm run contract:build && npm run typecheck -w @team/api",
     "prisma:generate": "npm run prisma:generate -w @team/api",
     "prisma:validate": "npm run prisma:validate -w @team/api",
     "db:migrate": "npm run db:migrate -w @team/api",
     "db:seed": "npm run db:seed -w @team/api",
     "test:unit": "npm run test:unit -w @team/api",
     "test:integration": "npm run test:integration -w @team/api",
-    "test": "npm run test -w @team/api",
+    "test": "npm run contract:build && npm run test -w @team/api",
     "db:start": "bash scripts/db-local.sh start",
     "db:stop": "bash scripts/db-local.sh stop",
     "db:setup": "bash scripts/db-local.sh setup",
     "db:test:migrate": "npm run db:test:migrate -w @team/api",
     "web:dev": "npm run dev -w @team/web",
     "web:start": "npm run start -w @team/web",
-    "web:build": "npm run build -w @team/web",
-    "web:typecheck": "npm run typecheck -w @team/web",
+    "web:build": "npm run contract:build && npm run build -w @team/web",
+    "web:typecheck": "npm run contract:build && npm run typecheck -w @team/web",
     "web:lint": "npm run lint -w @team/web",
-    "web:test": "npm run test -w @team/web",
+    "web:test": "npm run contract:build && npm run test -w @team/web",
     "web:test:browser": "npm run test:browser -w @team/web",
     "system:test": "playwright test --config tests/system/playwright.config.mjs",
     "system:lint": "eslint --config tests/system/eslint.config.mjs tests/system --max-warnings=0",
     "typecheck:all": "npm run typecheck && npm run web:typecheck",
     "build:all": "npm run build && npm run web:build",
-    "test:all": "npm run test -w @team/api && npm run web:test",
+    "test:all": "npm run contract:build && npm run test -w @team/api && npm run web:test",
     "system:migrate": "node tests/system/migrate.mjs",
     "api:lint": "npm run lint -w @team/api",
     "lint:all": "npm run api:lint && npm run web:lint && npm run system:lint",
-    "vercel:build": "node scripts/vercel-build.mjs && npm run web:build"
+    "vercel:build": "node scripts/vercel-build.mjs && npm run web:build",
+    "contract:build": "npm run build -w @team/contract"
   },
   "packageManager": "npm@10.8.2"
 }

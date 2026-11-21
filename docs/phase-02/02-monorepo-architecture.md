@@ -3,6 +3,8 @@
 ## القرار المقترح
 npm Workspaces لتطبيقين لأن npm 10.8.2 متاح فعليًا وpnpm غير متاح في التدقيق. لا حاجة لتثبيت مدير حزم آخر أو pnpm-workspace.yaml مع npm. هذا اختيار تصميم لا ملف أُنشئ. يُحفظ اسم الجذر الحالي مع اقتباس المسار عند التشغيل. لا packages/ مشتركة حاليًا.
 
+> **تحديث 2026-11-19 (سحب الاستخراج):** أُنشئت `packages/contract` باسم `@team/contract` بعد تثبيت التكرار الفعلي. تقتصر على DTO ونصوص رموز الأخطاء العربية ومغلفات Success/Failure ومعرّفات البذر الثابتة؛ لا تحمل أي منطق أعمال ولا تُستورد من واجهة العرض إلا كأنواع وقيم نقية. يُبنى قبل الطرفين (`contract:build`) ويُستهلك كـ `dist/` مُصرَّح. استُخرِجت الأنواع والمعرّفات من `apps/web/src/types/api.ts` (أُزيل) ومن `apps/api/src/lib/errors.ts` ومن `apps/api/src/services/seed-data.ts`، وأصبحت `apps/web/src/lib/api-client.ts` تفرض اكتمال سجل رسائلها عبر `Record<ClientErrorCode, string>` وقت الترجمة.
+
 | المسار المخطط | المسؤولية |
 |---|---|
 | package.json وpackage-lock.json في الجذر | workspaces apps/* وscripts معتادة ونسخ dependencies مقفلة بعد اعتماد التوافق |
